@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid bg-primary py-5 hero-header mb-5">
+    <div class="row py-3">
+        <div class="col-12 text-center">
+            <h1 class="display-3 text-white animated zoomIn">Contact Successful</h1>
+            <a href="" class="h4 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h4 text-white">Contact Success</a>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+               <h1 class="display-4">Thank you for contacting us!</h1>
+            <p>We will get back to you shortly.</p>
+            <a href="{% url 'home' %}" class="btn btn-primary">Go Back to Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

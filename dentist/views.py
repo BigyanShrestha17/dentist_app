@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import AppointmentForm
+from .forms import *
 
 
 def home(request):
@@ -26,8 +26,20 @@ def about(request):
 def price(request):
     return render(request, "price.html")
 
+
 def contact(request):
-    return render(request, "contact.html")
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+
+def contact_success(request):
+    return render(request, 'contact_success.html')
 
 def service(request):
     return render(request, "service.html")
